@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeffrey's Sleek Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="main">
+  <div class="main-content">
+    <img src="LinkedFinal.jpg" alt="Jeffrey Shen" class="main-photo">
+    <h1>Welcome to Jeffrey's World</h1>
+    
+    <!-- Icons with links to profiles -->
+    <div class="social-icons">
+      <a href="https://github.com/Skyism" target="_blank" title="GitHub Profile">
+        <img src="githublogo.png" alt="GitHub" width="40" height="40">
+      </a>
+      <a href="mailto:jshen3@andrew.cmu.edu" title="Send me an email">
+        <img src="maillogo.jpeg" alt="Email" width="40" height="40">
+      </a>
+      <a href="https://www.linkedin.com/in/jeffrey-shen-996795327" target="_blank" title="LinkedIn Profile">
+        <img src="linkedinlogo.png" alt="LinkedIn" width="40" height="40">
+      </a>
+    </div>
+    
+    <a href="#projects" class="btn-primary">Explore Projects</a>
+  </div>
+</section>
+
+<section id="about">
+  <div class="content">
+    <h2 class="fade-in">About Me</h2>
+    <p class="fade-in">Hi, my name is Jeffrey Shen, a first-year at Carnegie Mellon studying Electrical and Computer Engineering.
+      My track right now is software with a focus on embedded systems. Please reach out to me at my
+      <a href="mailto:sunnyjeff0606@gmail.com"><b>email</b></a> or my
+      <a href="https://www.linkedin.com/in/jeffrey-shen-996795327" target="_blank"><b>LinkedIn</b></a>
+      if you have any questions!</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="content">
+    <h2 class="fade-in">Projects</h2>
+    <p class="fade-in">Check out some of my work below.</p>
+    <div class="project-grid">
+      <div class="project-item">
+        <a href="project1.html">Word Hunt Solver</a>
+      </div>
+      <div class="project-item">
+        <a href="project2.html">Casual Project 2</a>
+      </div>
+      <div class="project-item">
+        <a href="intensive-project1.html">Intensive Project 1</a>
+      </div>
+      <div class="project-item">
+        <a href="intensive-project2.html">Intensive Project 2</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="content">
+    <h2 class="fade-in">Education</h2>
+    <p class="fade-in">Check out my list of completed courses below. Technical courses relevant to my major are highlighted.</p>
+    <div class="course-list fade-in">
+      <div class="course-item-important">Introduction to Electrical and Computer Engineering</div>
+      <div class="course-item">Differential Equations</div>
+      <div class="course-item">Linear Algebra</div>
+      <div class="course-item">Multivariable Calculus</div>
+      <div class="course-item">Concepts of Mathematics</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Jeffrey Shen.</p>
+</footer>
+
+<script>
+  // Function to check if an element is in the viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  // Function to add the 'visible' class
+  function fadeInElements() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    fadeElements.forEach(element => {
+      if (isInViewport(element)) {
+        element.classList.add('visible');
+      }
+    });
+  }
+  
+  // Event listener for scroll and load events
+  window.addEventListener('scroll', fadeInElements);
+  window.addEventListener('load', fadeInElements);
+</script>
+
+</body>
+</html>
