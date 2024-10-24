@@ -185,6 +185,7 @@ section {
 
 #education {
     padding: 60px 20px;
+    border-bottom: 1px solid gray;
 }
 
 .course-list {
@@ -221,4 +222,29 @@ section {
 
 .course-item:hover {
     transform: translateY(-5px);
+}
+
+#source-code {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+#source-code .content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+#source-code .content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#source-code img {
+    transition: transform 0.3s ease;
+}
+
+#source-code a:hover img {
+    transform: scale(1.1);
 }
