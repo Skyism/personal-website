@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prove Your Worthiness</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-color: #ffe6e6;
+      color: #cc0033;
+    }
+    .container {
+      padding: 20px;
+      border: 2px solid #ff66b2;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 4px 8px rgba(255, 102, 178, 0.5);
+      background-color: #fff0f5;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: 1px solid #ff66b2;
+      background-color: #ff99cc;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ff66b2;
+    }
+    .question-container {
+      display: none;
+    }
+    h1, h2 {
+      font-family: 'Arial Hebrew', cursive;
+    }
+  </style>
+</head>
+<body>
+<div class="container" id="intro">
+  <h1>You must prove your worthiness to receive my gift</h1>
+  <p>Do you have what it takes? You must know me...extremely well.</p>
+  <button id="startButton">Begin Challenge</button>
+</div>
+
+<div class="container question-container" id="questions">
+  <h2 id="questionText"></h2>
+  <div id="answers">
+    <button class="answer" data-correct="false">Answer 1</button>
+    <button class="answer" data-correct="false">Answer 2</button>
+    <button class="answer" data-correct="true">Answer 3</button>
+    <button class="answer" data-correct="false">Answer 4</button>
+  </div>
+</div>
+
+<script>
+  const questions = [
+    { text: "What is my favorite number?", answers: ["3", "5", "7", "13"], correctIndex: 2 },
+    { text: "What is my favorite color?", answers: ["Yellow", "Purple", "Cyan", "White"], correctIndex: 1 },
+    { text: "What is my favorite theorem from concepts?", answers:
+              ["Cantor's Diagonal Argument", "Strong induction hypothesis",
+                "Euler's Theorem", "Chinese Remainder Theorem"], correctIndex: 0 },
+    { text: "What color is my ____?", answers: ["yellow", "white", "yellowish white", "blue"], correctIndex: 3 },
+    { text: "What is my favorite chord?", answers: ["A minor", "B-flat major triad",
+        "F major triad with suspended B flat", "A flat minor chord flat 6"], correctIndex: 1 },
+    { text: "My favorite dci corp?", answers: ["Bluecoats", "Blue Devils", "Crown", "Phantom"], correctIndex: 2 },
+    { text: "What is my favorite event in Scioly", answers:
+              ["Trajectory", "Air Trajectory", "Detector Building", "Optics"], correctIndex: 1 },
+    { text: "What is my most played video game", answers: ["LOL", "TFT", "MC", "STS"], correctIndex: 2 },
+    { text: "Which question is this", answers: ["7", "8", "9", "10"], correctIndex: 2 },
+    { text: "What is my favorite song", answers: ["Blue", "Maslanka Symphony No.4", "Fantasy", "Starboy"],
+      correctIndex: 2 }
+  ];
+  
+  const intro = document.getElementById('intro');
+  const questionsContainer = document.getElementById('questions');
+  const questionText = document.getElementById('questionText');
+  const answersContainer = document.getElementById('answers');
+  
+  let currentQuestionIndex = 0;
+  
+  document.getElementById('startButton').addEventListener('click', function() {
+    intro.style.display = 'none';
+    questionsContainer.style.display = 'block';
+    loadQuestion();
+  });
+  
+  function loadQuestion() {
+    const question = questions[currentQuestionIndex];
+    questionText.textContent = question.text;
+    const buttons = Array.from(answersContainer.children);
+    buttons.forEach((button, index) => {
+      button.textContent = question.answers[index];
+      button.dataset.correct = index === question.correctIndex;
+    });
+  }
+  
+  answersContainer.addEventListener('click', function(event) {
+    if (!event.target.classList.contains('answer')) return;
+    
+    const isCorrect = event.target.dataset.correct === 'true';
+    if (isCorrect) {
+      currentQuestionIndex++;
+      if (currentQuestionIndex < questions.length) {
+        loadQuestion();
+      } else {
+        window.location.href = "stage2.html"; // Redirect to success page
+      }
+    } else {
+      window.location.href = "failure.html"; // Redirect to failure page
+    }
+  });
+</script>
+</body>
+</html>
