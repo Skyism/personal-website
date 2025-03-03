@@ -138,6 +138,30 @@
     });
   }
   
+  // Smooth scroll function for navigation links
+  document.querySelectorAll('nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const targetId = this.getAttribute('href');
+      
+      // Only apply smooth scroll for on-page links (not for index.html)
+      if (targetId !== 'index.html') {
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        // For index.html, navigate normally
+        window.location.href = targetId;
+      }
+    });
+  });
+  
   // Event listener for scroll and load events
   window.addEventListener('scroll', fadeInElements);
   window.addEventListener('load', fadeInElements);
