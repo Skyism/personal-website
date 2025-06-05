@@ -223,36 +223,25 @@ section {
     padding: 0 10px;
 }
 
-.course-item {
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 180px;
-    flex: 1 1 calc(50% - 15px);
-    max-width: 300px;
-    text-align: center;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-}
-
+.course-item,
 .course-item-important {
     background-color: #e0e0e0;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 180px;
-    flex: 1 1 calc(50% - 15px);
-    max-width: 300px;
     text-align: center;
     font-weight: 600;
-    color: #007aff;
     transition: transform 0.3s ease;
+    flex: 1 1 calc(50% - 15px);
+    min-width: 280px; 
+    max-width: 300px;
 }
 
-.course-item:hover {
-    transform: translateY(-5px);
+.course-item-important {
+    color: #007aff;
 }
+
+.course-item:hover,
 
 .course-item-important:hover {
     transform: translateY(-5px);
