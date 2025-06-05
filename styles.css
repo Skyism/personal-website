@@ -160,6 +160,86 @@ section {
     transform: translateY(-5px);
 }
 
+#education {
+    padding: 60px 20px;
+    border-bottom: 1px solid gray;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 0 10px;
+}
+
+.course-item,
+.course-item-important {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    flex: 1 1 calc(50% - 15px);
+    min-width: 280px; 
+    max-width: 300px;
+}
+
+.course-item-important {
+    color: #007aff;
+}
+
+.course-item:hover,
+
+.course-item-important:hover {
+    transform: translateY(-5px);
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    .course-list {
+        gap: 12px;
+        padding: 0 8px;
+    }
+    
+    .course-item,
+    .course-item-important {
+        flex: 1 1 calc(50% - 12px);
+        min-width: 140px;
+        padding: 12px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    .course-list {
+        gap: 10px;
+        padding: 0 5px;
+    }
+    
+    .course-item,
+    .course-item-important {
+        /* Full width on small mobile */
+        flex: 1 1 100%;
+        min-width: unset;
+        max-width: none;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+    .course-item,
+    .course-item-important {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
 
 /* Footer */
 footer {
@@ -208,43 +288,6 @@ section {
     width: 70px;
     height: auto;
     margin-bottom: 20px;
-}
-
-#education {
-    padding: 60px 20px;
-    border-bottom: 1px solid gray;
-}
-.course-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-    padding: 0 10px;
-}
-
-.course-item,
-.course-item-important {
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    font-weight: 600;
-    transition: transform 0.3s ease;
-    flex: 1 1 calc(50% - 15px);
-    min-width: 280px; 
-    max-width: 300px;
-}
-
-.course-item-important {
-    color: #007aff;
-}
-
-.course-item:hover,
-
-.course-item-important:hover {
-    transform: translateY(-5px);
 }
 
 #source-code {
