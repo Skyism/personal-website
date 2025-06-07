@@ -218,16 +218,17 @@ section {
     .course-list {
         gap: 10px;
         padding: 0 5px;
+        width: 100%;
     }
     
     .course-item,
     .course-item-important {
-        /* Full width on small mobile */
         flex: 1 1 100%;
-        min-width: unset;
-        max-width: none;
-        margin: 0 auto;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 0;
         width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -237,6 +238,7 @@ section {
     .course-item-important {
         padding: 10px;
         font-size: 14px;
+        width: 100%;
     }
 }
 
