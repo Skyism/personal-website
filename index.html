@@ -52,8 +52,8 @@
 
 <section id="about">
   <div class="content">
-    <h2 class="fade-in">About Me</h2>
-    <p class="fade-in">Hi, my name is Jeffrey Shen, a first-year at Carnegie Mellon studying Electrical and Computer Engineering and Computer Science.
+    <h2>About Me</h2>
+    <p>Hi, my name is Jeffrey Shen, a first-year at Carnegie Mellon studying Electrical and Computer Engineering and Computer Science.
       Currently, I am interested in Embedded Systems as well as Software Engineering. Please reach out to me at my
       <a href="mailto:jshen3@andrew.cmu.edu"><b>email</b></a> or my
       <a href="https://www.linkedin.com/in/jeffrey-shen-996795327" target="_blank"><b>LinkedIn</b></a>
@@ -63,8 +63,8 @@
 
 <section id="projects">
   <div class="content">
-    <h2 class="fade-in">Work Experience/Projects</h2>
-    <p class="fade-in">Check out some of my work below.</p>
+    <h2>Work Experience/Projects</h2>
+    <p>Check out some of my work below.</p>
     <div class="project-grid">
       <!-- <div class="project-item">
         <a href="project-TA15122.html">Teaching Assistant: 15-122 Intro to Imperative Programming</a>
@@ -111,8 +111,8 @@
 
 <section id="leadership">
   <div class="content">
-    <h2 class="fade-in">Leadership & Soft Skills</h2>
-    <p class="fade-in">Explore my leadership experiences and key soft skills below.</p>
+    <h2>Leadership & Soft Skills</h2>
+    <p>Explore my leadership experiences and key soft skills below.</p>
     <div class="project-grid">
       <!-- <div class="leadership-item">
         <a href="leadership-science-olympiad.html">President: CMU Science Olympiad</a>
@@ -141,10 +141,10 @@
 
 <section id="education">
   <div class="content">
-    <h2 class="fade-in">Education</h2>
-    <p class="fade-in">Check out my list of completed/in-progress courses below. Highlighted courses are in-progress.</p>
-    <p class="fade-in"><b>Current GPA: 4.0 </b></p>
-    <div class="course-list fade-in">
+    <h2>Education</h2>
+    <p>Check out my list of completed/in-progress courses below. Highlighted courses are in-progress.</p>
+    <p><b>Current GPA: 4.0 </b></p>
+    <div class="course-list">
       <div class="course-item">Intro to Electrical and Computer Engineering</div>
       <div class="course-item">Differential Equations</div>
       <div class="course-item">Linear Algebra</div>
@@ -182,38 +182,14 @@
 </footer>
 
 <script>
-  // Function to check if an element is in the viewport
-  function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-  
-  // Function to add the 'visible' class
-  function fadeInElements() {
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(element => {
-      if (isInViewport(element)) {
-        element.classList.add('visible');
-      }
-    });
-  }
-  
   // Smooth scroll function for navigation links
   document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      
       const targetId = this.getAttribute('href');
-      
       // Only apply smooth scroll for on-page links (not for index.html)
       if (targetId !== 'index.html') {
         const targetElement = document.querySelector(targetId);
-        
         if (targetElement) {
           window.scrollTo({
             top: targetElement.offsetTop,
@@ -226,10 +202,6 @@
       }
     });
   });
-  
-  // Event listener for scroll and load events
-  window.addEventListener('scroll', fadeInElements);
-  window.addEventListener('load', fadeInElements);
 </script>
 
 </body>
