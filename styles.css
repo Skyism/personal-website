@@ -233,7 +233,7 @@ footer {
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 5s ease-out, transform 5s ease-out;
+    transition: opacity 3s ease-out, transform 3s ease-out;
 }
 
 .fade-in.visible {
@@ -292,5 +292,11 @@ section {
 
 #source-code a:hover img {
     transform: scale(1.1);
+}
+
+#education .fade-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
 }
 
