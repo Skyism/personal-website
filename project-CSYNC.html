@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSync: College Application Tracking</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href=
+          "favicon.jpg"
+        type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+    .skill-item {
+        background: #f1f5f9;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        border-left: 4px solid #3b82f6;
+        font-weight: 500;
+    }
+    .highlight {
+            background: linear-gradient(120deg, #ddd6fe 0%, #c7d2fe 100%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        
+    @media (max-width: 600px) {
+        body {
+            padding: 20px 10px;
+        }
+        
+        .container {
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+        }
+        
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#education">Education</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="project-details">
+  <div class="content">
+    <h2>CSync: College Application Tracking</h2>
+    <a href="https://heroic-empanada-14fa99.netlify.app/" target="_blank">
+      <img src="papericon.png" alt="website"  width="70" height="70" class="project-image">
+    </a>
+    <p>
+        The system features a sophisticated progress tracking mechanism that automatically calculates completion percentages across all applications, while providing a calendar view to visualize upcoming deadlines.
+    </p>
+    
+    <p>
+        The technical architecture demonstrates modern web development technologies with a <strong>React</strong> frontend using <strong>Tailwind CSS</strong> for responsive design and a <strong>Node.js/Express</strong> backend with <strong>MongoDB</strong> for data persistence. The application incorporates advanced features including <strong>Auth0 authentication</strong>, comprehensive caching and rate limiting for performance optimization, and a custom tutorial system for new user onboarding.
+    </p>
+    
+    <p>
+        The backend implements sophisticated and custom middleware for request deduplication and response caching, while the frontend utilizes <strong>React Router</strong> for navigation and complex state management for handling the multi-faceted college application data structure.
+    </p>
+    
+    <p>
+        I learned many skills during the development of this project, including <strong>RESTful API design</strong>, <strong>database schema design</strong> with complex relationships, <strong>security implementation</strong> with JWT authentication, and <strong>performance optimization</strong> through caching strategies.
+    </p>
+    
+    <h2>Skills Demonstrated</h2>
+    <div class="skills-grid">
+        <div class="skill-item">Full-Stack Web Development</div>
+        <div class="skill-item">React.js</div>
+        <div class="skill-item">Node.js & Express.js</div>
+        <div class="skill-item">MongoDB</div>
+        <div class="skill-item">Tailwind CSS</div>
+        <div class="skill-item">Auth0 Authentication</div>
+        <div class="skill-item">RESTful API Design</div>
+        <div class="skill-item">Database Schema Design</div>
+        <div class="skill-item">JWT Authentication</div>
+        <div class="skill-item">Caching Strategies</div>
+        <div class="skill-item">Rate Limiting</div>
+        <div class="skill-item">React Router</div>
+        <div class="skill-item">State Management</div>
+        <div class="skill-item">Performance Optimization</div>
+        <div class="skill-item">Security Implementation</div>
+        <div class="skill-item">Responsive Design</div>
+        <div class="skill-item">Custom Middleware Development</div>
+        <div class="skill-item">Request Deduplication</div>
+        <div class="skill-item">Response Caching</div>
+        <div class="skill-item">Git</div>
+    </div>
+    <a href="index.html#projects" class="btn-primary">Back to Projects</a>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2024 Jeffrey Shen.</p>
+</footer>
+
+</body>
+</html>
