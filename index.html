@@ -20,7 +20,7 @@
       <li><a href="#projects">Projects</a></li>
       <li><a href="#leadership">Leadership</a></li>
       <li><a href="#education">Education</a></li>
-      <li><a href="#resume">Resume</a></li>
+      <li><a href="Yinchu_Shen_Resume.pdf" target="_blank">Resume</a></li>
     </ul>
   </nav>
 </header>
@@ -51,13 +51,14 @@
   </div>
 </section>
 
-<section id="resume">
+<!-- Removed inline resume section; keeping only navbar link to PDF -->
+<!-- <section id="resume">
   <div class="content">
     <h2>Resume</h2>
     <p>Download my resume for a comprehensive overview of my experience and skills.</p>
     <a href="Yinchu_Shen_Resume.pdf" target="_blank" class="btn-primary">Download Resume (PDF)</a>
   </div>
-</section>
+</section> -->
 
 <section id="about">
   <div class="content">
@@ -187,24 +188,22 @@
 </footer>
 
 <script>
-  // Smooth scroll function for navigation links
+  // Smooth scroll function for navigation links (only for hash links)
   document.querySelectorAll('nav a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      // Only apply smooth scroll for on-page links (not for index.html)
-      if (targetId !== 'index.html') {
-        const targetElement = document.querySelector(targetId);
+      const href = this.getAttribute('href');
+      // Only handle in-page hash links like #about
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        const targetElement = document.querySelector(href);
         if (targetElement) {
           window.scrollTo({
             top: targetElement.offsetTop,
             behavior: 'smooth'
           });
         }
-      } else {
-        // For index.html, navigate normally
-        window.location.href = targetId;
       }
+      // For non-hash links (e.g., index.html or PDF), let default behavior occur
     });
   });
 </script>
